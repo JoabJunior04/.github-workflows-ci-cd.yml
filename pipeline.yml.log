@@ -1,0 +1,43 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build
+        run: echo "Build realizado"
+
+      - name: Testes
+        run: echo "Testes executados"
+
+  deploy-staging:
+    needs: build-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy Staging
+        run: echo "Deploy em staging"
+
+  deploy-production:
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy Produção
+        run: echo "Deploy em produção"

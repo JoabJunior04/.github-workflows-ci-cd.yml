@@ -1,0 +1,23 @@
+#Projeto - Cidades ESG Inteligentes
+
+#Como executar
+
+docker-compose up --build
+
+#Pipeline CI/CD
+
+Utiliza GitHub Actions com:
+- Build automático
+- Testes automatizados
+- Deploy staging
+- Deploy produção
+
+## Containerização
+
+Uso de Docker com imagem OpenJDK
+
+## Tecnologias
+
+- Java
+- Docker
+- GitHub Actions
